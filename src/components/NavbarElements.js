@@ -4,27 +4,49 @@ import { FaBars } from 'react-icons/fa';
   
 export const Nav = styled.nav`
   background: #981B45;
-  height: 45px;
+  height: 50px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
+  font-size: 18px;
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
-  
-export const NavLink = styled(Link)`
-  color: #808080;
+
+export const Menu =styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20%;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+`;
+
+export const Items=styled.li`
   display: flex;
   align-items: center;
+  height: 80px;
+  width: 7vw;
+`;
+
+export const NavLink = styled(Link)`
+  color: white;
   text-decoration: none;
-  padding: 60px;
-  height: 100%;
-  cursor: pointer;
+  padding: 0.9rem 1rem;
   &.active {
-    color: #FFFFFF
+    background-color: #751636;
+    border-radius: 1px;
+    transition: all 0.2s ease-out;
   }
+`;
+
+export const DropLink = styled(Link)`
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  padding: 13px;
+  color: black;
 `;
   
 export const Bars = styled(FaBars)`
