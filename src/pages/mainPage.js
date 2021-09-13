@@ -24,14 +24,15 @@ const CategoryText=styled.text`
 const CategoryDiv=styled.div`
   padding: 40px 0px 40px 0px
 `;
-const slideImages = [
+
+
+const mainPage = () => {
+
+  const slideImages = [
     '../assets/event.PNG',
     '../assets/event.PNG',
     '../assets/event.PNG'
   ];
-
-const mainPage = () => {
-
   
   return (
     <MainContainer>

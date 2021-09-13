@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import styled from "styled-components";
 
 const Title=styled.text`
@@ -28,7 +29,10 @@ const topPage = () => {
   <MainContainer>
     <Container>
         <Title>덕성 굿즈 플랫폼</Title>
-        <LognReg>로그인|회원가입</LognReg>
+        <div>
+          <LognReg><Link to="/loginpage">로그인</Link></LognReg>|
+          <LognReg><Link to="/register">회원가입</Link></LognReg>
+        </div>
     </Container>
   </MainContainer>
   )
