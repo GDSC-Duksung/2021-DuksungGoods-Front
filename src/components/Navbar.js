@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 import Dropdown from './Dropdown';
-import { NavLink as Link } from 'react-router-dom';
-import './Navbar.css';
-// TODO: DROP down menu 만들기
+import './NavbarElements';
+import { Nav, Items ,NavLink, Menu} from './NavbarElements';
   
 const Navbar = () => {
 
-  const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -28,47 +25,26 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='navbar'>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          {/* <NavLink to='/main' activeStyle>
-            카테고리
-          </NavLink> */}
-         <li
-            className='nav-item'
+      <Nav>
+        <Menu>
+         <Items
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>
-            <Link
-              to='/whole'
-              className='nav-links'
-              onClick={closeMobileMenu}>
-              카테고리 <i className='fas fa-caret-down' /></Link>
+            <NavLink to='/whole'>
+              카테고리 <i className='fas fa-caret-down' /></NavLink>
             {dropdown && <Dropdown />}
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/watchlistpage'
-              className='nav-links'
-              onClick={closeMobileMenu}>
-              관심목록</Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/notepage'
-              className='nav-links'
-              onClick={closeMobileMenu}>
-              쪽지보내기
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/mypage'
-              className='nav-links'
-              onClick={closeMobileMenu}>
-              마이페이지
-            </Link>
-          </li>
-        </ul>
-      </nav>
+          </Items>
+          <Items>
+            <NavLink to='/watchlistpage'>관심목록</NavLink>
+          </Items>
+          <Items>
+            <NavLink to='/notepage'>쪽지보내기</NavLink>
+          </Items>
+          <Items>
+            <NavLink to='/mypage'>마이페이지</NavLink>
+          </Items>
+        </Menu>
+      </Nav>
     </>
   );
 };

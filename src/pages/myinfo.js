@@ -16,10 +16,10 @@ const Title = styled.div`
   padding-top: 10px;
 `;
 
-const Content = styled.div`
-  margin: 5px;
-  padding: 5px;
-`;
+// const Content = styled.div`
+//   margin: 5px;
+//   padding: 5px;
+// `;
 
 const Input = styled.input`
   width: 100%;
@@ -46,13 +46,13 @@ const Hr = styled.hr`
   border: none;
 `;
 
-const Row = styled.div`
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-`;
+// const Row = styled.div`
+//   display: inline-flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 const Myinfo = () => {
   return (

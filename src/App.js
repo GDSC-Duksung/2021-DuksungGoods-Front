@@ -4,7 +4,6 @@ import Main from "./pages/mainPage";
 import NavBar from './components/Navbar';
 import Top from './components/top';
 import MyPage from './pages/myPage';
-import NotePage from './pages/notePage';
 import WatchListPage from './pages/watchlistPage';
 import WholePage from './pages/wholePage';
 import FictiPage from './pages/fictiPage';
@@ -14,8 +13,10 @@ import Realposting from './pages/realposting';
 import Preform from './pages/preform';
 import Realform from './pages/realform';
 import Myinfo from './pages/myinfo';
-
-// TODO: menuBar 위에 top.js 동시 클릭 현상 막기
+import LoginPage from './pages/loginPage';
+import RegisterPage from './pages/registerPage';
+import NotePage from './pages/notePage';
+import FindPassPage from './pages/findPassPage';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
       <Route exact path='/' component={Main}/>
       <Switch>
         <Route path='/watchlistpage' component={WatchListPage} />
-        <Route path='/notepage' component={NotePage} />
+        <Route path='/loginpage' component={LoginPage} />
         <Route path='/mypage' component={MyPage} />
         <Route path='/whole' component={WholePage} />
         <Route path='/ficti' component={FictiPage} />
@@ -38,23 +39,19 @@ function App() {
         <Route path='/preform' component={Preform} />
         <Route path='/realform' component={Realform} />
         <Route path='/myinfo' component={Myinfo} />
+        <Route path="/register" component={RegisterPage}/>
+        <Route path="/notepage" component={NotePage}/>
+        <Route path="/findpass" component={FindPassPage}/>
+        <Route
+          render={({location})=>(
+            <div>
+              <h2>이 페이지는 존재하지 않습니다: {location.pathname}</h2>
+            </div>
+          )}
+          />
       </Switch>
     </Router>
     </div>
-
-    
-    
-
-
-
-    
-    // <div className="App">
-    //   <mainPage/>
-    //   <header className="App-header">
-    //     <p>안녕하신가</p>
-        
-    //   </header>
-    // </div>
   );
 }
 

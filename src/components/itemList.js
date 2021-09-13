@@ -2,13 +2,25 @@ import React from 'react';
 import styled from "styled-components";
 import image from '../assets/dscup.PNG';
 import Slider from "react-slick";
-
+// const Container=styled.div`
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// `;
+// const LoginForm=styled.div`
+//     display: flex;
+//     text-align: center;
+//     width: 400px;
+//     margin-top: 100px;
+//     flex-direction: column;
+// `;
 const StyledDiv=styled.div`
     padding: 10px;
     flex-direction: row;
+
 `;
 const GoodsDiv=styled.div`
-    flex:1;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
 `;
@@ -25,7 +37,7 @@ const ItemList=()=>{
         slidesToScroll: 2
       };
 
-    //   const titles=['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth'];
+     //  const titles=['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth'];
       const titles=['First'];
     const itemlists = titles.map(
         
