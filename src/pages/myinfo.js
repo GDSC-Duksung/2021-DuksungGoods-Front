@@ -16,11 +16,6 @@ const Title = styled.div`
   padding-top: 10px;
 `;
 
-const Content = styled.div`
-  margin: 5px;
-  padding: 5px;
-`;
-
 const Input = styled.input`
   width: 100%;
   padding: 10px;
@@ -46,14 +41,6 @@ const Hr = styled.hr`
   border: none;
 `;
 
-const Row = styled.div`
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Myinfo = () => {
   return (
     <MainContainer>
@@ -77,10 +64,14 @@ const Myinfo = () => {
           <Input type="text" placeholder="example@naver.com" />
         </div>
         <div>
+          <Title>비밀번호</Title>
+          <Input type="password" placeholder="*****" />
+        </div>
+        <div>
           <Title>주소</Title>
           <Input type="text" placeholder="서울시 도봉구 쌍문동" />
         </div>
-        <Button>회원정보수정</Button> <Button white>취소</Button>
+        <Button>저장하기</Button> <Button white>탈퇴하기</Button>
       </Container>
     </MainContainer>
   );
