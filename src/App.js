@@ -33,6 +33,7 @@ function App() {
           <Route path="/whole" component={WholePage} />
           <Route path="/ficti" component={FictiPage} />
           <Route path="/actual" component={ActualPage} />
+
           <Route path="/preposting" component={Preposting} />
           <Route path="/realposting" component={Realposting} />
           <Route path="/preform" component={Preform} />
