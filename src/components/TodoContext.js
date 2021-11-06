@@ -30,6 +30,7 @@ const initialTodos = [
     user: "heesun",
     text: "아침 산책",
     seller: true,
+    profile: "asdf.jpg",
     // done: true,
   },
   {

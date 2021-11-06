@@ -13,9 +13,9 @@ import Preposting from "./pages/preposting";
 import Realposting from "./pages/realposting";
 import Preform from "./pages/preform";
 import Realform from "./pages/realform";
-import Myinfo from "./pages/myinfo";
 import Community from "./pages/community";
 import Update from "./pages/update";
+import MyinfoPage from "./pages/myinfoPage";
 
 // TODO: menuBar 위에 top.js 동시 클릭 현상 막기
 
@@ -38,7 +38,7 @@ function App() {
           <Route path="/realposting" component={Realposting} />
           <Route path="/preform" component={Preform} />
           <Route path="/realform" component={Realform} />
-          <Route path="/myinfo" component={Myinfo} />
+          <Route path="/myinfopage" component={MyinfoPage} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
         </Switch>
