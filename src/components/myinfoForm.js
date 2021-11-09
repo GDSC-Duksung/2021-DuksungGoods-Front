@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import "react-slideshow-image/dist/styles.css";
 import styled from "styled-components";
+import { useState } from "react/cjs/react.development";
 
 const MainContainer = styled.div`
   justify-content: center;
@@ -41,92 +42,91 @@ const Hr = styled.hr`
   border: none;
 `;
 
-class Myinfo extends Component {
-  state = {
-    name: "",
-    nickname: "",
-    phone: "",
-    email: "",
+function MyinfoForm(props) {
+  const [info, setInfo] = useState({
+    name: "홍길동",
+    nickname: "덕새",
+    phone: "010-0000-0000",
+    email: "duksung@naver.com",
     password: "",
-    address: "",
+    address: "서울시 도봉구",
+  });
+
+  const handleChange = (e) => setInfo(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.onCreate(info); //오류,,,, 클래스형->함수형 변환과정
   };
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.onCreate(this.state);
-  };
-  render() {
-    return (
-      <MainContainer>
-        <Container>
-          <form onSubmit={this.handleSubmit}>
-            <h1>회원정보</h1>
-            <Hr />
-            <div>
-              <Title>이름</Title>
-              <Input
-                type="text"
-                name="name"
-                placeholder="홍길동"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Title>닉네임</Title>
-              <Input
-                type="text"
-                name="nickname"
-                placeholder="덕새"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Title>휴대폰번호</Title>
-              <Input
-                type="text"
-                name="phone"
-                placeholder="010-2222-1111"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Title>이메일</Title>
-              <Input
-                type="text"
-                name="email"
-                placeholder="example@naver.com"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Title>비밀번호</Title>
-              <Input
-                type="password"
-                name="password"
-                placeholder="*****"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <Title>주소</Title>
-              <Input
-                type="text"
-                name="address"
-                placeholder="서울시 도봉구 쌍문동"
-                onChange={this.handleChange}
-              />
-            </div>
-            <Button type="submit">저장하기</Button>
-            <Button white>탈퇴하기</Button>
-          </form>
-        </Container>
-      </MainContainer>
-    );
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   this.props.onCreate(this.state);
+  // };
+  return (
+    <MainContainer>
+      <Container>
+        <form onSubmit={handleSubmit}>
+          <h1>회원정보</h1>
+          <Hr />
+          <div>
+            <Title>이름</Title>
+            <Input
+              type="text"
+              name="name"
+              value={info.name}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Title>닉네임</Title>
+            <Input
+              type="text"
+              name="nickname"
+              value={info.nickname}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Title>휴대폰번호</Title>
+            <Input
+              type="text"
+              name="phone"
+              value={info.phone}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Title>이메일</Title>
+            <Input
+              type="text"
+              name="email"
+              value={info.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Title>비밀번호</Title>
+            <Input
+              type="password"
+              name="password"
+              value="*****"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Title>주소</Title>
+            <Input
+              type="text"
+              name="address"
+              value={info.address}
+              onChange={handleChange}
+            />
+          </div>
+          <Button type="submit">저장하기</Button>
+          <Button white>탈퇴하기</Button>
+        </form>
+      </Container>
+    </MainContainer>
+  );
 }
-export default Myinfo;
+export default MyinfoForm;

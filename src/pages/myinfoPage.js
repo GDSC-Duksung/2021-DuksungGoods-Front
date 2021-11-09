@@ -1,17 +1,15 @@
 //전달 된 값 받는 페이지
 import React, { Component } from "react";
-import Myinfo from "../components/myinfoForm";
+import MyinfoForm from "../components/myinfoForm";
 
-class MyinfoPage extends Component {
-  handleCreate = (data) => {
+function MyinfoPage() {
+  const handleCreate = (data) => {
     console.log(data);
   };
-  render() {
-    return (
-      <div className="MyinfoPage">
-        <Myinfo onCreate={this.handleCreate} />
-      </div>
-    );
-  }
+  return (
+    <div className="MyinfoPage">
+      <MyinfoForm onCreate={handleCreate} />
+    </div>
+  );
 }
 export default MyinfoPage;
