@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
     MainContainer,
@@ -21,11 +21,14 @@ import { useRouteMatch } from "react-router";
 
 const NotePage = () => {
 
+    //실시간 받아오는 형식으로 바꾸기
+    
     const conversations = [
         { id: 0, name: "test" },
         { id: 1, name: "ing" },
         { id: 2, name: "please" }
       ];
+    //const [messages, setMessages]=React.useState({});
       
     const messages = {
     0: [
@@ -39,7 +42,14 @@ const NotePage = () => {
         { message: "안녕하세요 최강무적 FRONTEND 팀입니다."}, 
         { message: "기대할게요", direction: "outgoing", position: "single"}
     ]
-    }
+    };
+    useEffect(() => {
+        
+        return () => {
+            console.log(messages)
+            
+        }
+    }, [messages])
 
     const [messageInputValue, setMessageInputValue] = useState("");
     const [currentConversation, setCurrentConversation] = useState(0);
@@ -106,8 +116,10 @@ const NotePage = () => {
             <MessageInput placeholder="쪽지 보내기" 
             value={messageInputValue}
             onChange={(val) => setMessageInputValue(val)}
-            onSend={messages[currentConversation].push({message: messageInputValue})}
-            // onSend={() => {setMessageInputValue("");}}
+            onSend={
+                 messages[currentConversation].push({message: messageInputValue})
+            }
+            onSend={() => {setMessageInputValue("");}}
             />
             </ChatContainer>
             </MainContainer>

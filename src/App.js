@@ -17,6 +17,7 @@ import LoginPage from './pages/loginPage';
 import RegisterPage from './pages/registerPage';
 import NotePage from './pages/notePage';
 import FindPassPage from './pages/findPassPage';
+import ActDetailPage from './pages/actDetailPage';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/register" component={RegisterPage}/>
         <Route path="/notepage" component={NotePage}/>
         <Route path="/findpass" component={FindPassPage}/>
+        <Route path="/actdetail" component={ActDetailPage}/>
         <Route
           render={({location})=>(
             <div>

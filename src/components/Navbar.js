@@ -41,7 +41,8 @@ const Navbar = () => {
             <NavLink to='/notepage'>쪽지보내기</NavLink>
           </Items>
           <Items>
-            <NavLink to='/mypage'>마이페이지</NavLink>
+            {/* <NavLink to='/mypage'>마이페이지</NavLink> */}
+            <NavLink to ='/actdetail'>마이페이지</NavLink>
           </Items>
         </Menu>
       </Nav>
