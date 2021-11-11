@@ -1,6 +1,6 @@
 # Figma
 
-https://www.figma.com/file/MIBI6AJJMOp0mkYydsvL63/Duksung-Goods-Platform?node-id=0%3A1
+[Prototype](https://www.figma.com/file/MIBI6AJJMOp0mkYydsvL63/Duksung-Goods-Platform?node-id=0%3A1)
 
 # Getting Started with Create React App
 
