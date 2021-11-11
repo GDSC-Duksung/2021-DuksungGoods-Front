@@ -42,7 +42,7 @@ const Hr = styled.hr`
   border: none;
 `;
 
-function MyinfoForm(props) {
+const MyinfoForm = (props) => {
   const [info, setInfo] = useState({
     name: "홍길동",
     nickname: "덕새",
@@ -128,5 +128,5 @@ function MyinfoForm(props) {
       </Container>
     </MainContainer>
   );
-}
+};
 export default MyinfoForm;
