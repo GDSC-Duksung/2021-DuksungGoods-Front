@@ -15,7 +15,7 @@ import Preform from "./pages/preform";
 import Realform from "./pages/realform";
 import Community from "./pages/community";
 import Update from "./pages/update";
-import MyinfoPage from "./pages/myinfoPage";
+import Myinfo from "./pages/myinfo";
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
 import FindPassPage from "./pages/findPassPage";
@@ -43,7 +43,7 @@ function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/notepage" component={NotePage} />
           <Route path="/findpass" component={FindPassPage} />
-          <Route path="/myinfopage" component={MyinfoPage} />
+          <Route path="/myinfo" component={Myinfo} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
 

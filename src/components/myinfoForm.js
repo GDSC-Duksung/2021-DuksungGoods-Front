@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
 import "react-slideshow-image/dist/styles.css";
 import styled from "styled-components";
@@ -55,7 +55,7 @@ function MyinfoForm(props) {
   const handleChange = (e) => setInfo(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onCreate(info); //오류,,,, 클래스형->함수형 변환과정
+    props.onCreate(info); //오류, 클래스형->함수형 변환과정
   };
 
   // const handleSubmit = (e) => {
