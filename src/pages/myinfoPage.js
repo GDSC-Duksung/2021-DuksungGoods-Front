@@ -1,7 +1,7 @@
 import React from "react";
 import MyinfoForm from "../components/myinfoForm";
 
-function Myinfo() {
+function MyinfoPage() {
   const handleCreate = (data) => {
     console.log(data);
   };
@@ -11,4 +11,4 @@ function Myinfo() {
     </div>
   );
 }
-export default Myinfo;
+export default MyinfoPage;
