@@ -10,6 +10,7 @@ const MainContainer = styled.div`
 const Container = styled.div`
   width: 100%;
   overflow: auto;
+  white-space: pre;
 `;
 
 const InsertFormPositioner = styled.div`
@@ -49,15 +50,18 @@ function TodoCreate() {
 
   const onToggle = () => setOpen(!open);
   const onChange = (e) => setValue(e.target.value);
+
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch({
       type: "CREATE",
       todo: {
+        profile:
+          "https://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/duksung_symbol.png",
         id: nextId.current,
         user: "heesun", //user DB값 받아오기
         seller: true,
-        text: value,
+        textarea: value,
       },
     });
     nextId.current += 1;

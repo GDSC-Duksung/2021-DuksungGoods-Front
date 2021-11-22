@@ -20,6 +20,7 @@ const H1 = styled.h1`
   color: ${(props) => (props.white ? "black" : "white")};
   background-color: ${(props) => (props.white ? "white" : "#981B45")};
 `;
+
 function Community() {
   return (
     <MainContainer>
