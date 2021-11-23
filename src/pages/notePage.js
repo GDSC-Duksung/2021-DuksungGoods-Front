@@ -22,13 +22,14 @@ import { useRouteMatch } from "react-router";
 const NotePage = () => {
     
     const conversations = [
-        { id: 0, name: "test" },
-        { id: 1, name: "ing" },
-        { id: 2, name: "please" }
+        { id: 0, name: "굿즈 공구1" },
+        { id: 1, name: "굿즈 공구2" },
+        { id: 2, name: "굿즈 공구3" }
       ];
     const [messages, setMessages]=React.useState({
         0: [
-            {message: "아아 테스트중"}
+            {message: "아아 테스트중"},
+            {message: "테스트"}
         ],
         1: [
             { message: "헤이 모두들 안녕 내가 누군지 아니?"}, 
@@ -50,7 +51,7 @@ const NotePage = () => {
             <Sidebar position="left" scrollable={false}>
                 <Search placeholder="Recent..." disabled />
                 <ConversationList>
-                    {conversations.map( c => <Conversation key={c.id} name={c.name} info={"example"} lastSenderName={"lastSenderName"}
+                    {conversations.map( c => <Conversation key={c.id} name={c.name} info={"굿즈 언제까지 진행하나요?"} lastSenderName={"오리"}
                                          onClick={() => setCurrentConversation(c.id)} >
                                              <Avatar src={userImage}></Avatar></Conversation>)  }
                 </ConversationList> 
@@ -62,7 +63,7 @@ const NotePage = () => {
             <ConversationHeader.Content userName="Nickname"/>
             </ConversationHeader>
             <MessageList>
-                { currentConversation && messages[currentConversation].map((m,idx, d, p) => <Message key={idx} model={m}/>)}
+                { messages[currentConversation].map((m,idx) => <Message key={idx} model={m}/>)}
             </MessageList>
             <MessageInput placeholder="쪽지 보내기" direction="outgoing" position="single"
                 value={messageInputValue}
