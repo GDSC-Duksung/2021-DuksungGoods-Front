@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
-    MainContainer,
-    Avatar,
-    ChatContainer,
-    MessageList,
-    Message,
-    MessageInput,
-    ConversationHeader,
-    MessageSeparator,
-    Sidebar,
-    Conversation,
-    Search,
-    ConversationList
-  } from "@chatscope/chat-ui-kit-react";
-import userImage from '../assets/user.png';
+  MainContainer,
+  Avatar,
+  ChatContainer,
+  MessageList,
+  Message,
+  MessageInput,
+  ConversationHeader,
+  MessageSeparator,
+  Sidebar,
+  Conversation,
+  Search,
+  ConversationList,
+} from "@chatscope/chat-ui-kit-react";
+import userImage from "../assets/user.png";
 import { useRouteMatch } from "react-router";
 //https://github.com/chatscope/chat-ui-kit-react
 //https://github.com/chatscope/use-chat
@@ -41,8 +41,8 @@ const NotePage = () => {
         ]
     });
 
-    const [messageInputValue, setMessageInputValue] = useState("");
-    const [currentConversation, setCurrentConversation] = useState(0);
+  const [messageInputValue, setMessageInputValue] = useState("");
+  const [currentConversation, setCurrentConversation] = useState(0);
 
     return (
 
