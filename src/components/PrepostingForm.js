@@ -15,12 +15,17 @@ const Title = styled.text`
   font-size: 20px;
 `;
 
-const Input = styled.input`
+const Textarea = styled.textarea`
   width: 100%;
   padding: 10px;
   border-radius: 3px;
   font-size: 15px;
+  margin-top: 10px;
+  height: ${(props) => (props.contents ? "300px" : "default")};
+  resize: none;
 `;
+
+const Input = styled.input``;
 
 const Button = styled.button`
   width: 47%;
@@ -38,6 +43,9 @@ const Hr = styled.hr`
   height: 5px;
   border-radius: 100px;
   border: none;
+`;
+const DIV = styled.div`
+  padding: 10px;
 `;
 
 function PrepostingForm(props) {
@@ -61,7 +69,7 @@ function PrepostingForm(props) {
         <h1>가수요조사 포스팅</h1>
         <Hr />
         <form onSubmit={handleSubmit}>
-          <div>
+          <DIV>
             <Title>카테고리 :</Title>
             <select class="form-select" id="exampleSelect1">
               <option>기타</option>
@@ -71,27 +79,27 @@ function PrepostingForm(props) {
               <option>4</option>
               <option>5</option>
             </select>
-          </div>
-          <div>
-            <Title>제목 :</Title>
+          </DIV>
+          <DIV>
+            <Title>제목 </Title>
             <Input
               type="text"
               placeholder="제목을 입력하세요"
               value={preposting.title}
               onChange={handleChange}
             />
-          </div>
-          <div>
-            <Title>내용 :</Title>
-            <Input
-              type="text"
+          </DIV>
+          <DIV>
+            <Title>내용 </Title>
+            <Textarea
+              contents
               placeholder="내용을 입력하세요"
               value={preposting.contents}
               onChange={handleChange}
             />
-          </div>
-          <div>
-            <Title>이미지 첨부 :</Title>
+          </DIV>
+          <DIV>
+            <Title>이미지 첨부 </Title>
             <form>
               <p>
                 <input
@@ -103,35 +111,35 @@ function PrepostingForm(props) {
                 ></input>
               </p>
             </form>
-          </div>
-          <div>
-            <Title>목표수량 :</Title>
+          </DIV>
+          <DIV>
+            <Title>목표수량 </Title>
             <Input
               type="text"
               placeholder="100개 (최소수량)"
               value={preposting.quantity}
               onChange={handleChange}
             />
-          </div>
-          <div>
-            <Title>기간 :</Title>
+          </DIV>
+          <DIV>
+            <Title>기간 </Title>
             <Input
               type="text"
               placeholder="yyyy.mm.dd ~ yyyy.mm.dd"
               value={preposting.period}
               onChange={handleChange}
             />
-          </div>
-          <div>
-            <Title>가격 :</Title>
+          </DIV>
+          <DIV>
+            <Title>가격 </Title>
             <Input
               type="text"
               placeholder="최소금액 ~ 최대금액"
               value={preposting.price}
               onChange={handleChange}
             />
-          </div>
-          <div>
+          </DIV>
+          <DIV>
             <input
               class="form-check-input"
               type="checkbox"
@@ -139,7 +147,7 @@ function PrepostingForm(props) {
               id="flexCheckDefault"
             ></input>
             가수요조사 포스팅인 것을 확인했습니다.
-          </div>
+          </DIV>
           <Button type="submit">등록하기</Button>
           <Button white>취소하기</Button>
         </form>

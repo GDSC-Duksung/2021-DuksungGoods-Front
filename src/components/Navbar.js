@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import Dropdown from './Dropdown';
-import './NavbarElements';
-import { Nav, Items ,NavLink, Menu} from './NavbarElements';
+import React, { useState } from "react";
+import "./NavbarElements";
+import { Nav, Items, NavLink, Menu } from "./NavbarElements";
 
 const Navbar = () => {
-
   const [dropdown, setDropdown] = useState(false);
 
   const onMouseEnter = () => {
@@ -27,21 +25,17 @@ const Navbar = () => {
     <>
       <Nav>
         <Menu>
-         <Items
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}>
-            <NavLink to='/whole'>
-              카테고리 <i className='fas fa-caret-down' /></NavLink>
-            {dropdown && <Dropdown />}
+          <Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <NavLink to="/ficti">가수요조사</NavLink>
           </Items>
           <Items>
-            <NavLink to='/watchlistpage'>관심목록</NavLink>
+            <NavLink to="/actual">실수요조사</NavLink>
           </Items>
           <Items>
-            <NavLink to='/notepage'>쪽지보내기</NavLink>
+            <NavLink to="/notepage">쪽지보내기</NavLink>
           </Items>
           <Items>
-            <NavLink to ='/my'>마이페이지</NavLink>
+            <NavLink to="/my">마이페이지</NavLink>
           </Items>
         </Menu>
       </Nav>
