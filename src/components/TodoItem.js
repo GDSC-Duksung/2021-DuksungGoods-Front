@@ -125,7 +125,7 @@ function TodoItem({ profile, id, user, text, seller, key }) {
       </Button> */}
       <Button_Reply onClick={onReply}>댓글 </Button_Reply>
       <Time>3</Time>
-      <Button onClick={onModify}>수정</Button>
+      {/* <Button onClick={onModify}>수정</Button> */}
       <Button onClick={onRemove}>삭제</Button>
       <Hr />
     </TodoItemBlock>

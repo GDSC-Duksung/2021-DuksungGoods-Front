@@ -12,10 +12,10 @@ function todoReducer(state, action) {
     //   return state.map((todo) =>
     //     todo.id === action.id ? { ...todo, done: !todo.done } : todo
     //   );
-    case "MODIFY":
-      return state.map(
-        (todo) => (todo.user === action.user ? { ...todo } : todo) //수정,,
-      );
+    // case "MODIFY":
+    //   return state.map(
+    //     (todo) => (todo.user === action.user ? { ...todo } : todo) //수정,,
+    //   );
 
     case "REMOVE":
       return state.filter((todo) => todo.id !== action.id);
