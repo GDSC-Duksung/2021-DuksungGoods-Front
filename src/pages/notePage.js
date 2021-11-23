@@ -20,36 +20,25 @@ import { useRouteMatch } from "react-router";
 //https://github.com/chatscope/use-chat
 
 const NotePage = () => {
-
-    //실시간 받아오는 형식으로 바꾸기
     
     const conversations = [
         { id: 0, name: "test" },
         { id: 1, name: "ing" },
         { id: 2, name: "please" }
       ];
-    //const [messages, setMessages]=React.useState({});
-      
-    const messages = {
-    0: [
-        {message: "아아 테스트중"}
-    ],
-    1: [
-        { message: "헤이 모두들 안녕 내가 누군지 아니?"}, 
-        { message: "김보경이다! 김보경이다!", direction: "outgoing", position: "single"}
-    ],
-    2: [
-        { message: "안녕하세요 최강무적 FRONTEND 팀입니다."}, 
-        { message: "기대할게요", direction: "outgoing", position: "single"}
-    ]
-    };
-    useEffect(() => {
-        
-        return () => {
-            console.log(messages)
-            
-        }
-    }, [messages])
+    const [messages, setMessages]=React.useState({
+        0: [
+            {message: "아아 테스트중"}
+        ],
+        1: [
+            { message: "헤이 모두들 안녕 내가 누군지 아니?"}, 
+            { message: "김보경이다! 김보경이다!", direction: "outgoing", position: "single"}
+        ],
+        2: [
+            { message: "안녕하세요 최강무적 FRONTEND 팀입니다."}, 
+            { message: "기대할게요", direction: "outgoing", position: "single"}
+        ]
+    });
 
     const [messageInputValue, setMessageInputValue] = useState("");
     const [currentConversation, setCurrentConversation] = useState(0);
@@ -72,54 +61,13 @@ const NotePage = () => {
             <Avatar src={userImage} name="Me" />
             <ConversationHeader.Content userName="Nickname"/>
             </ConversationHeader>
-            {/* <MessageList >
-                <Message
-                    //style={{backgroundColor:"red"}}
-                    model={{
-                    direction: "incoming",
-                    message: "이거 아직 판매중인가요?",
-                    sentTime: "just now",
-                    sender: "Nickname",
-                    }}
-                    avatarPosition="tl"
-                >
-                    <Avatar src={userImage} name="Akane" />
-                </Message>
-                
-                <Message
-                    model={{
-                    direction: "incoming"
-                    }}
-                    avatarPosition="tl"
-                    >
-                    <Avatar src={userImage} name="Akane" />
-                    <Message.ImageContent
-                    src={'https://t1.daumcdn.net/cfile/tistory/9971AC345CF98AF713'}
-                    alt="덕성 굿즈"
-                    width={200}
-                    />
-                </Message>
-                <MessageSeparator content="Saturday, 30 November 2019" />
-                <Message
-                model={{
-                    message: "안돼. 돌아가",
-                    sentTime: "15 mins ago",
-                    // sener: localSender,
-                    direction: "outgoing",
-                    position: "single"
-                }}
-                />
-            </MessageList> */}
             <MessageList>
-                { currentConversation && messages[currentConversation].map((m,idx) => <Message key={idx} model={m} />)}
+                { currentConversation && messages[currentConversation].map((m,idx, d, p) => <Message key={idx} model={m}/>)}
             </MessageList>
-            <MessageInput placeholder="쪽지 보내기" 
-            value={messageInputValue}
-            onChange={(val) => setMessageInputValue(val)}
-            onSend={
-                 messages[currentConversation].push({message: messageInputValue})
-            }
-            onSend={() => {setMessageInputValue("");}}
+            <MessageInput placeholder="쪽지 보내기" direction="outgoing" position="single"
+                value={messageInputValue}
+                onChange={(val) => setMessageInputValue(val)}
+                onSend={() => {messages[currentConversation].push({message: messageInputValue, direction: "outgoing", position: "single"}); setMessageInputValue("");}}
             />
             </ChatContainer>
             </MainContainer>
