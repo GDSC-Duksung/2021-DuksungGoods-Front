@@ -34,6 +34,12 @@ const Button = styled.button`
   padding: 5px;
   background-color: white;
 `;
+const Button_Reply = styled.button`
+  float: left;
+  border: none;
+  padding: 5px;
+  background-color: white;
+`;
 
 const Name = styled.text`
   flex: 1;
@@ -60,7 +66,7 @@ const Hr = styled.hr`
   border-top: 1px solid #ebebeb;
 `;
 
-function TodoItem({ profile, img, id, user, text }) {
+function TodoItem({ profile, id, user, text, seller, key }) {
   const dispatch = useTodoDispatch();
 
   const onModify = () => {
@@ -74,6 +80,12 @@ function TodoItem({ profile, img, id, user, text }) {
   const onRemove = () => {
     dispatch({
       type: "REMOVE",
+      id,
+    });
+  };
+  const onReply = () => {
+    dispatch({
+      type: "REPLY",
       id,
     });
   };
@@ -111,8 +123,8 @@ function TodoItem({ profile, img, id, user, text }) {
       <Button onClick={onRemove}>
         <MdDelete /> 삭제하기
       </Button> */}
-      <text>댓글 </text>
-      <text>3</text>
+      <Button_Reply onClick={onReply}>댓글 </Button_Reply>
+      <Time>3</Time>
       <Button onClick={onModify}>수정</Button>
       <Button onClick={onRemove}>삭제</Button>
       <Hr />
