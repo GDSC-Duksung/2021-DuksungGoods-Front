@@ -4,7 +4,6 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import styled from "styled-components";
 import ItemList from '../components/itemList';
-
 // https://www.npmjs.com/package/react-slideshow-image
 const MainContainer=styled.div`
   justify-content: center;

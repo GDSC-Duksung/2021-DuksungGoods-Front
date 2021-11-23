@@ -44,7 +44,6 @@ function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/notepage" component={NotePage} />
           <Route path="/findpass" component={FindPassPage} />
-
           <Route path="/myinfo" component={MyinfoPage} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
