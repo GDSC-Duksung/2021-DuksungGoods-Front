@@ -30,6 +30,9 @@ const Text = styled.div`
 
 const Button = styled.button`
   float: right;
+  border: none;
+  padding: 5px;
+  background-color: white;
 `;
 
 const Name = styled.text`
@@ -110,6 +113,8 @@ function TodoItem({ profile, img, id, user, text }) {
       </Button> */}
       <text>댓글 </text>
       <text>3</text>
+      <Button onClick={onModify}>수정</Button>
+      <Button onClick={onRemove}>삭제</Button>
       <Hr />
     </TodoItemBlock>
   );
