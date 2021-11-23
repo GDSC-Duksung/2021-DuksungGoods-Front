@@ -20,17 +20,16 @@ import MyinfoPage from "./pages/myinfoPage";
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
 import FindPassPage from "./pages/findPassPage";
-
-// TODO: menuBar 위에 top.js 동시 클릭 현상 막기
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
     <div>
-      <Top />
       <Router>
+        <Top />
         <NavBar />
-        <Route exact path="/" component={Main} />
         <Switch>
+          <Route exact path="/" component={Main} />
           <Route path="/watchlistpage" component={WatchListPage} />
           <Route path="/loginpage" component={LoginPage} />
           <Route path="/my" component={MyPage} />
@@ -56,6 +55,7 @@ function App() {
             )}
           />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
