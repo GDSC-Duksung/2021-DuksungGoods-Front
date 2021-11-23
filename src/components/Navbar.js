@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Dropdown from './Dropdown';
 import './NavbarElements';
 import { Nav, Items ,NavLink, Menu} from './NavbarElements';
-  
+
 const Navbar = () => {
 
   const [dropdown, setDropdown] = useState(false);
@@ -41,12 +41,12 @@ const Navbar = () => {
             <NavLink to='/notepage'>쪽지보내기</NavLink>
           </Items>
           <Items>
-            <NavLink to ='/mypage'>마이페이지</NavLink>
+            <NavLink to ='/my'>마이페이지</NavLink>
           </Items>
         </Menu>
       </Nav>
     </>
   );
 };
-  
+
 export default Navbar;

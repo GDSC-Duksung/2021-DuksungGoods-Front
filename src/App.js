@@ -4,7 +4,7 @@ import Main from "./pages/mainPage";
 import ActDetailPage from "./pages/actDetailPage";
 import NavBar from "./components/Navbar";
 import Top from "./components/top";
-import MyPage from "./pages/myPage";
+import MyPage from "./pages/MyPage";
 import NotePage from "./pages/notePage";
 import WatchListPage from "./pages/watchlistPage";
 import WholePage from "./pages/wholePage";
@@ -33,7 +33,7 @@ function App() {
         <Switch>
           <Route path="/watchlistpage" component={WatchListPage} />
           <Route path="/loginpage" component={LoginPage} />
-          <Route path="/mypage" component={MyPage} />
+          <Route path="/my" component={MyPage} />
           <Route path="/whole" component={WholePage} />
           <Route path="/ficti" component={FictiPage} />
           <Route path="/actual" component={ActualPage} />
