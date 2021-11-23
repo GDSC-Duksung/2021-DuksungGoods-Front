@@ -16,9 +16,10 @@ function TodoList() {
     <TodoListBlock>
       {todos.map((todo) => (
         <TodoItem
+          profile={todo.profile}
           id={todo.id}
           user={todo.user}
-          text={todo.text}
+          text={todo.textarea}
           seller={todo.seller}
           key={todo.id}
         />

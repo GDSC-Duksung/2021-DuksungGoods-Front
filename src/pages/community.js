@@ -9,25 +9,18 @@ const MainContainer = styled.div`
   display: flex;
 `;
 const Container = styled.div`
-  width: 70%;
-`;
-const Title = styled.div`
-  display: flex;
-  padding: 10px;
+  width: 100%;
 `;
 const H1 = styled.h1`
   padding: 10px;
   color: ${(props) => (props.white ? "black" : "white")};
   background-color: ${(props) => (props.white ? "white" : "#981B45")};
 `;
+
 function Community() {
   return (
     <MainContainer>
       <Container>
-        <Title>
-          <H1>모든게시글</H1>
-          <H1 white>판매자 업데이트</H1>
-        </Title>
         <TodoProvider>
           <TodoCreate />
           <TodoList />
