@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/mainPage";
-import Myinfo from './pages/myinfoPage';
-import ActDetailPage from './pages/actDetailPage';
+import ActDetailPage from "./pages/actDetailPage";
 import NavBar from "./components/Navbar";
 import Top from "./components/top";
 import MyPage from "./pages/myPage";
@@ -21,7 +20,6 @@ import MyinfoPage from "./pages/myinfoPage";
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
 import FindPassPage from "./pages/findPassPage";
-
 
 // TODO: menuBar 위에 top.js 동시 클릭 현상 막기
 
@@ -46,20 +44,20 @@ function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/notepage" component={NotePage} />
           <Route path="/findpass" component={FindPassPage} />
-          <Route path="/myinfopage" component={MyinfoPage} />
+
+          <Route path="/myinfo" component={MyinfoPage} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
-          <Route path='/myinfo' component={Myinfo} />
-          <Route path="/actdetail" component={ActDetailPage}/>
+          <Route path="/actdetail" component={ActDetailPage} />
           <Route
-            render={({location})=>(
+            render={({ location }) => (
               <div>
                 <h2>이 페이지는 존재하지 않습니다: {location.pathname}</h2>
               </div>
             )}
-            />
-          </Switch>
-        </Router>
+          />
+        </Switch>
+      </Router>
     </div>
   );
 }

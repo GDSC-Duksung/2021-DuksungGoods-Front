@@ -1,5 +1,4 @@
-//전달 된 값 받는 페이지
-import React, { Component } from "react";
+import React from "react";
 import MyinfoForm from "../components/myinfoForm";
 
 function MyinfoPage() {
@@ -7,7 +6,7 @@ function MyinfoPage() {
     console.log(data);
   };
   return (
-    <div className="MyinfoPage">
+    <div className="Myinfo">
       <MyinfoForm onCreate={handleCreate} />
     </div>
   );

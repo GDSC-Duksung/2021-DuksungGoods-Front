@@ -15,33 +15,52 @@ const Remove = styled.div`
   }
   display: none;
 `;
-
 const TodoItemBlock = styled.div`
   height: 100%;
-  border: 1px solid black;
   padding: 8px;
   margin: 8px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   overflow: auto;
 `;
 
 const Text = styled.div`
   flex: 1;
-  font-size: 21px;
   color: #495057;
-  ${(props) =>
-    props.done &&
-    css`
-      color: #ced4da;
-    `}
+  padding-bottom: 50px;
 `;
 
 const Button = styled.button`
   float: right;
+  border: none;
+  padding: 5px;
+  background-color: white;
 `;
 
-function TodoItem({ id, user, text }) {
+const Name = styled.text`
+  flex: 1;
+  font-weight: bold;
+`;
+
+const Time = styled.text`
+  font-size: 80%;
+`;
+
+const Img = styled.div`
+  padding: 5px;
+`;
+const Column = styled.div`
+  float: left;
+`;
+
+const Row = styled.div`
+  content: "";
+  display: table;
+  clear: both;
+`;
+const Hr = styled.hr`
+  border-top: 1px solid #ebebeb;
+`;
+
+function TodoItem({ profile, img, id, user, text }) {
   const dispatch = useTodoDispatch();
 
   const onModify = () => {
@@ -61,17 +80,42 @@ function TodoItem({ id, user, text }) {
 
   return (
     <TodoItemBlock>
-      <text>
-        {user}
-        <br />
-      </text>
-      <Text>{text}</Text>
-      <Button onClick={onModify}>
+      <Row>
+        <Column>
+          <Img>
+            <img height="45px" src={profile} />
+          </Img>
+        </Column>
+        <Column>
+          <Row>
+            <Name>{user} </Name>
+          </Row>
+          <Row>
+            <Time> 5시간 전 , 수정됨 </Time>
+          </Row>
+        </Column>
+      </Row>
+      <Text>
+        {text.split("\n").map((line) => {
+          return (
+            <>
+              {line}
+              <br />
+            </>
+          );
+        })}
+      </Text>
+      {/* <Button onClick={onModify}>
         <MdBorderColor /> 수정하기
       </Button>
       <Button onClick={onRemove}>
         <MdDelete /> 삭제하기
-      </Button>
+      </Button> */}
+      <text>댓글 </text>
+      <text>3</text>
+      <Button onClick={onModify}>수정</Button>
+      <Button onClick={onRemove}>삭제</Button>
+      <Hr />
     </TodoItemBlock>
   );
 }

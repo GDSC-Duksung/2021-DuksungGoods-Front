@@ -8,43 +8,43 @@ const Container=styled.div`
     align-content: center;
     justify-content: center;
 `;
-const Intro=styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 70%;
+const Intro = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 70%;
 `;
-const IntroDetail=styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 10px 10px 10px 20px;
+const IntroDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 20px;
 `;
-const InformDiv=styled.div`
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #F0F0F0;
-    border: 1px solid #DBDBDB;
-    border-radius: 10px;
-    margin-top: 20px;
+const InformDiv = styled.div`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  margin-top: 20px;
 `;
-const ChoiceDiv=styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
+const ChoiceDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
 `;
 const ActText = styled.text`
-  font-weight: ${props => props.weight ? props.weight : 'normal'};
-  font-size: ${props => props.size}px;
-  line-height: ${props => props.height}px;
-  color: ${props => props.color ? props.color : '#22343D'};
+  font-weight: ${(props) => (props.weight ? props.weight : "normal")};
+  font-size: ${(props) => props.size}px;
+  line-height: ${(props) => props.height}px;
+  color: ${(props) => (props.color ? props.color : "#22343D")};
 `;
-const NumButton=styled.button`
-    border: 1px solid #DBDBDB;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-    font-weight: bold;
-    margin-right:10px;
+const NumButton = styled.button`
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  margin-right: 10px;
 `;
 const MenuBar=styled.div`
     border: 1px solid #C4C4C4;
@@ -154,9 +154,10 @@ const ActDetailPage = () => {
         setMenu( menuIndex);
     };
 
-    useEffect(() => {
-        setTotalPrice(num*price);
-    }, [num])
+
+  useEffect(() => {
+    setTotalPrice(num * price);
+  }, [num]);
 
     return (
         <Container>
@@ -201,7 +202,5 @@ const ActDetailPage = () => {
             </div>
         </Container>
     );
-
-
 }
 export default ActDetailPage;
