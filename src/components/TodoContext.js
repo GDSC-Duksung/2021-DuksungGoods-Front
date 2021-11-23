@@ -19,7 +19,7 @@ function todoReducer(state, action) {
 
     case "REMOVE":
       return state.filter((todo) => todo.id !== action.id);
-    case "REPLY":
+    case "REPLY": //수정 필요
       return state.concat(action.todo);
 
     default:
