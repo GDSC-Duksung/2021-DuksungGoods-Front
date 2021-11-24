@@ -4,9 +4,6 @@ import Community from "../pages/community";
 const Container=styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
 `;
 const Intro = styled.div`
   display: flex;
@@ -86,8 +83,8 @@ const GoodsDetail=()=>{
 
     return(
         <Container style={{flexDirection:"row"}}>
-            <div style={{width: "70%",borderRadius:"5px", border:"1px solid #CBCBCB", height:"500px"}}>
-                <text>안녕하세요. 창작자 bogyung.입니다.</text>
+            <div style={{width: "70%",borderRadius:"5px", border:"1px solid #CBCBCB", height:"1000px"}}>
+                <text>안녕하세요. 창작자 bogyung.입니다. 이번에 공구할 굿즈는...</text>
             </div>
             <div  style={{width: "30%", padding:"1em"}}>
                 <div style={{display:"inline-block" ,width: "100%",border:"1px solid #C4C4C4", height:"40px", paddingTop:"20px"}}>
@@ -145,6 +142,13 @@ const ActDetailPage = () => {
     const [num, setNum]=React.useState(1);
     const [isClicked, setIsClicked]=React.useState(false);
     const [menu, setMenu]=React.useState(0);
+
+    const [heart, setHeart] = React.useState(false);
+
+    const handleButtonClick = (event, item) => {
+        setHeart(!heart);
+    }
+    
     const menuList = {
         0: <GoodsDetail />,
         1: <Community />
@@ -160,7 +164,7 @@ const ActDetailPage = () => {
   }, [num]);
 
     return (
-        <Container>
+        <Container style={{alignItems:"center"}}>
             <ActText height={200} size={35} weight={600}>이번 겨울은 뭐다? 덕담 공구(덕성 담요)
             <span role="img" aria-label="writing hand">🔥</span></ActText>
             <Intro>
@@ -178,12 +182,12 @@ const ActDetailPage = () => {
                     </InformDiv>
                     
                     <ChoiceDiv style={{justifyContent:"space-between"}}>
-                        <img src={require(`../assets/${isClicked ? 'i' : 'no'}wish.png`).default} alt={'wish'}
-                                    onClick={()=> isClicked ?
+                        <img src={require(`../assets/icons/heart-${isClicked ? 'clicked' : 'default'}.png`).default} alt={'heart'}
+                                     onClick={()=> isClicked ?
                                     setIsClicked(false)
                                     :
                                     setIsClicked(true)
-                                    } style={{width: "40px", height: "40px", margin:"-5px 13px 0 0"}}/>
+                                    } style={{width: "50px", height: "50px", margin:"-5px 5px 0 0"}}/>
                         <button style={{width:"90%", backgroundColor:"#981B45", borderRadius:"5px",
                             color:"#FFFFFF", fontSize:"15px", height:"45px", marginTop:"-5px", borderWidth:"0"}}>이 프로젝트 후원하기</button>
                     </ChoiceDiv>
