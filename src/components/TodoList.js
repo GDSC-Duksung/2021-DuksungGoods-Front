@@ -14,16 +14,20 @@ function TodoList() {
   const todos = useTodoState();
   return (
     <TodoListBlock>
-      {todos.map((todo) => (
-        <TodoItem
-          profile={todo.profile}
-          id={todo.id}
-          user={todo.user}
-          text={todo.textarea}
-          seller={todo.seller}
-          key={todo.id}
-        />
-      ))}
+      {todos
+        .slice(0)
+        .reverse()
+        .map((todo) => (
+          <TodoItem
+            profile={todo.profile}
+            id={todo.id}
+            user={todo.user}
+            text={todo.textarea}
+            time={todo.time}
+            seller={todo.seller}
+            key={todo.id}
+          />
+        ))}
     </TodoListBlock>
   );
 }

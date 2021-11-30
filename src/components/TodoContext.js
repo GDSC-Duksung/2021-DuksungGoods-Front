@@ -1,4 +1,6 @@
 import React, { createContext, useReducer, useContext, useRef } from "react";
+import TimeCounting from "time-counting";
+//https://github.com/Sh031224/time-counting 패키지
 
 const TodoStateContext = createContext(null);
 const TodoDispatchContext = createContext(null);
@@ -8,14 +10,6 @@ function todoReducer(state, action) {
   switch (action.type) {
     case "CREATE":
       return state.concat(action.todo);
-    // case "TOGGLE": //체크표시
-    //   return state.map((todo) =>
-    //     todo.id === action.id ? { ...todo, done: !todo.done } : todo
-    //   );
-    // case "MODIFY":
-    //   return state.map(
-    //     (todo) => (todo.user === action.user ? { ...todo } : todo) //수정,,
-    //   );
 
     case "REMOVE":
       return state.filter((todo) => todo.id !== action.id);
@@ -35,6 +29,9 @@ const initialTodos = [
     id: 1,
     user: "책들의정원",
     textarea: textexample,
+    time: TimeCounting("2018-08-10 05:00:00", {
+      lang: "ko",
+    }),
     seller: true,
     profile:
       "https://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/duksung_symbol.png",
@@ -44,6 +41,9 @@ const initialTodos = [
     id: 2,
     user: "최희선",
     textarea: "오늘의 뉴스 읽기",
+    time: TimeCounting("2019-08-10 05:00:00", {
+      lang: "ko",
+    }),
     seller: false,
     profile:
       "https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo-thumbnail.png",
@@ -53,6 +53,9 @@ const initialTodos = [
     id: 3,
     user: "김보경",
     textarea: "샌드위치 사 먹기",
+    time: TimeCounting("2020-08-10 05:00:00", {
+      lang: "ko",
+    }),
     seller: false,
     profile:
       "https://cheecle.kr/wp-content/uploads/2014/05/%ed%99%98%ec%83%81%ec%86%8d%ec%9c%bc%eb%a1%9c%ec%a0%95%ec%82%ac%ea%b0%81%ed%98%95.jpg",
@@ -61,6 +64,9 @@ const initialTodos = [
     id: 4,
     user: "이승희",
     textarea: "리액트 공부하기",
+    time: TimeCounting("2021-08-10 05:00:00", {
+      lang: "ko",
+    }),
     seller: false,
     profile:
       "https://cheecle.kr/wp-content/uploads/2014/05/%ed%99%94%ec%9d%b4%ed%8a%b8%ec%a0%95%ec%82%ac%ea%b0%81%ed%98%95.jpg",

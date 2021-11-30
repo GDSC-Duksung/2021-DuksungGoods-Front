@@ -17,6 +17,7 @@
     "react-slideshow-image": "^3.5.0",
     "react-textarea-autosize": "^8.3.3",
     "styled-components": "^5.3.1",
+    "time-counting": "^2.0.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

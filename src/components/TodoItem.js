@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete, MdBorderColor } from "react-icons/md";
 import { useTodoDispatch } from "./TodoContext";
+import TimeCounting from "time-counting";
 
 const Remove = styled.div`
   display: flex;
@@ -66,16 +67,8 @@ const Hr = styled.hr`
   border-top: 1px solid #ebebeb;
 `;
 
-function TodoItem({ profile, id, user, text, seller, key }) {
+function TodoItem({ profile, id, user, text, time, seller, key }) {
   const dispatch = useTodoDispatch();
-
-  const onModify = () => {
-    //고쵸야함
-    dispatch({
-      type: "MODIFY",
-      id,
-    });
-  };
 
   const onRemove = () => {
     dispatch({
@@ -103,7 +96,7 @@ function TodoItem({ profile, id, user, text, seller, key }) {
             <Name>{user} </Name>
           </Row>
           <Row>
-            <Time> 5시간 전 , 수정됨 </Time>
+            <Time> {time}, 수정됨 </Time>
           </Row>
         </Column>
       </Row>
@@ -117,15 +110,8 @@ function TodoItem({ profile, id, user, text, seller, key }) {
           );
         })}
       </Text>
-      {/* <Button onClick={onModify}>
-        <MdBorderColor /> 수정하기
-      </Button>
-      <Button onClick={onRemove}>
-        <MdDelete /> 삭제하기
-      </Button> */}
       <Button_Reply onClick={onReply}>댓글 </Button_Reply>
       <Time>3</Time>
-      {/* <Button onClick={onModify}>수정</Button> */}
       <Button onClick={onRemove}>삭제</Button>
       <Hr />
     </TodoItemBlock>
