@@ -4,6 +4,21 @@ import Community from "../pages/community";
 const Container=styled.div`
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1000px){
+        #form{
+            display: none;
+        }
+        #introdetail{
+            display:none;
+        }
+        #goodsinfo{
+            width:100%;
+        }
+        #goodsimg{
+            display: 100%;
+        }
+    }
 `;
 const Intro = styled.div`
   display: flex;
@@ -12,6 +27,7 @@ const Intro = styled.div`
 `;
 const IntroDetail = styled.div`
   display: flex;
+  width:30%;
   flex-direction: column;
   padding: 10px 10px 10px 20px;
 `;
@@ -66,6 +82,12 @@ const Wrapper=styled.div`
     flex-direction: row;
     margin: 0 0 5px 20px;
 `;
+const GoodsInfo=styled.div`
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid #CBCBCB;
+    height: 1000px;
+`;
 const GoodsDetail=()=>{
     const price=12000;
     const [totalPrice, setTotalPrice]=React.useState();
@@ -77,10 +99,10 @@ const GoodsDetail=()=>{
 
     return(
         <Container style={{flexDirection:"row"}}>
-            <div style={{width: "70%",borderRadius:"5px", border:"1px solid #CBCBCB", height:"1000px"}}>
+            <GoodsInfo id="goodsinfo">
                 <text>안녕하세요. 창작자 bogyung.입니다. 이번에 공구할 굿즈는...</text>
-            </div>
-            <div  style={{width: "30%", padding:"1em"}}>
+            </GoodsInfo>
+            <div  id="form" style={{width: "30%", padding:"1em"}}>
                 <div style={{display:"inline-block" ,width: "100%",border:"1px solid #C4C4C4", height:"40px", paddingTop:"20px"}}>
                     <ActText height={20} size={15} weight={100} style={{ margin:"0 100px 0 20px"}}>창작자 소개</ActText>
                     <ActText height={20} size={15} weight={100}>bogyung1</ActText>
@@ -135,8 +157,8 @@ const FictiDetailPage = () => {
             <ActText height={200} size={35} weight={600}>이번 겨울은 뭐다? 덕담 공구(덕성 담요)
             <span role="img" aria-label="writing hand">🔥</span></ActText>
             <Intro>
-                <img height="400px"  src="https://t1.daumcdn.net/cfile/tistory/99737A495BBD582C29"/>
-                <IntroDetail>
+                <img id="goodsimg" height="400px" src="https://t1.daumcdn.net/cfile/tistory/99737A495BBD582C29"/>
+                <IntroDetail id="introdetail">
                     <ActText height={20} size={17} weight={100}>모인 개수</ActText>
                     <ActText size={35} weight={600}>99개</ActText>
                     <ActText height={20} size={17} weight={100}>남은 시간</ActText>
