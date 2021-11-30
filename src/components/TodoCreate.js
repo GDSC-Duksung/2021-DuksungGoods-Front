@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
 import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 import Textarea from "react-textarea-autosize";
+import TimeCounting from "time-counting";
 
 const MainContainer = styled.div`
   justify-content: center;
@@ -76,6 +77,30 @@ function TodoCreate() {
   const onChange = (e) => setValue(e.target.value);
 
   const onSubmit = (e) => {
+    var today = new Date();
+
+    var year = today.getFullYear();
+    var month = ("0" + (today.getMonth() + 1)).slice(-2);
+    var day = ("0" + today.getDate()).slice(-2);
+    var hours = ("0" + today.getHours()).slice(-2);
+    var minutes = ("0" + today.getMinutes()).slice(-2);
+    var seconds = ("0" + today.getSeconds()).slice(-2);
+
+    var dateString =
+      year +
+      "-" +
+      month +
+      "-" +
+      day +
+      " " +
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds;
+
+    // console.log(dateString);
+    // console.log(typeof dateString);
     e.preventDefault();
     dispatch({
       type: "CREATE",
@@ -84,6 +109,9 @@ function TodoCreate() {
           "https://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/duksung_symbol.png",
         id: nextId.current,
         user: "heesun", //user DB값 받아오기
+        time: TimeCounting(dateString, {
+          lang: "ko",
+        }),
         seller: true,
         textarea: value,
       },

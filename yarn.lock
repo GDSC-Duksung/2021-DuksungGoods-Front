@@ -11027,6 +11027,11 @@
   "resolved" "https://registry.npmjs.org/thunky/-/thunky-1.1.0.tgz"
   "version" "1.1.0"
 
+"time-counting@^2.0.2":
+  "integrity" "sha512-UC9AlAUkxch27TlFWbE3Ka3ktgVx0zl2qNaFaF49N925YVBv0bAoeg3VrwjvQ3bkdICjO+6Wj2WcffT/HVVPQQ=="
+  "resolved" "https://registry.npmjs.org/time-counting/-/time-counting-2.0.2.tgz"
+  "version" "2.0.2"
+
 "timers-browserify@^2.0.4":
   "integrity" "sha512-9phl76Cqm6FhSX9Xe1ZUAMLtm1BLkKj2Qd5ApyWkXzsMRaA7dgr81kf4wJmQf/hAvg8EEyJxDo3du/0KlhPiKQ=="
   "resolved" "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.12.tgz"
