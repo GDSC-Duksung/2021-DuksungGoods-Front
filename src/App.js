@@ -1,16 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/mainPage";
-
+import FictiDetailPage from "./pages/fictiDetailPage";
 import ActualDetailPage from "./pages/actualDetailPage";
 import ActualListPage from "./pages/actualListPage";
 import ActualPostingPage from "./pages/actualPostingPage";
 import ActualForm from "./pages/actualForm";
-
 import FictiListPage from "./pages/fictiListPage";
 import FictiPostingPage from "./pages/fictiPostingPage";
 import FictiForm from "./pages/fictiForm";
-
 import NavBar from "./components/Navbar";
 import Top from "./components/top";
 import MyPage from "./pages/MyPage";
@@ -37,22 +35,20 @@ function App() {
           <Route path="/loginpage" component={LoginPage} />
           <Route path="/my" component={MyPage} />
           <Route path="/whole" component={WholePage} />
-
           <Route path="/actualForm" component={ActualForm} />
           <Route path="/actualdetailpage" component={ActualDetailPage} />
           <Route path="/actualpostingpage" component={ActualPostingPage} />
           <Route path="/actuallistpage" component={ActualListPage} />
-
           <Route path="/fictilistpage" component={FictiListPage} />
           <Route path="/fictipostingpage" component={FictiPostingPage} />
           <Route path="/fictiForm" component={FictiForm} />
-
           <Route path="/register" component={RegisterPage} />
           <Route path="/notepage" component={NotePage} />
           <Route path="/findpass" component={FindPassPage} />
           <Route path="/myinfo" component={MyinfoPage} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
+          <Route path="/fictidetailpage" component={FictiDetailPage} />
           <Route
             render={({ location }) => (
               <div>
