@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
 import { useTodoDispatch, useTodoNextId } from "./TodoContext";
+import Textarea from "react-textarea-autosize";
 
 const MainContainer = styled.div`
   justify-content: center;
@@ -13,33 +14,56 @@ const Container = styled.div`
   white-space: pre;
 `;
 
-const InsertFormPositioner = styled.div`
-  border: 1px solid black;
-  margin-top: 30px;
-`;
+const InsertFormPositioner = styled.div``;
 
 const InsertForm = styled.form`
   padding: 8px;
   margin: 8px;
-  display: flex;
   align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
 `;
 
-const Input = styled.textarea`
-  //글쓰면 자동 줄넘기기
+const Input = styled(Textarea)`
   border: none;
   width: 100%;
-  height: 300px; //자동조절로 바꾸기
   outline: none;
-  font-size: 18px;
   box-sizing: border-box;
+  resize: none;
+  font-size: 16px;
+  //자동조절로 바꾸기 : npm install react-textarea-autosize
+  min-height: 100px;
+
+  padding: 12px 20px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  color: rgb(158, 158, 158);
+  border: 0.8px solid rgb(242, 242, 242);
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 3%) 0px 0.8px 0px;
+  background: rgb(252, 252, 252);
+  line-height: 22px !important;
+  font-family: NotoSansKR, "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif !important;
 `;
 
-const Button = styled.button`
+const Input2 = styled.input`
   float: right;
-  margin-right: 20px;
+  margin: 16px 16px 8px;
+
+  border: none;
+  color: rgb(0, 0, 0);
+  height: 36px;
+  font-weight: 400;
+  //width: 100% !important;
+  font-size: 12px !important;
+  line-height: 20px !important;
+  font-family: NotoSansKR, "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif !important;
 `;
 
 function TodoCreate() {
@@ -72,22 +96,17 @@ function TodoCreate() {
   return (
     <MainContainer>
       <Container>
-        {open && (
-          <InsertFormPositioner>
-            <InsertForm onSubmit={onSubmit}>
-              <Input
-                autoFocus
-                onChange={onChange}
-                value={value}
-                placeholder="할 일을 입력 후, Enter 를 누르세요"
-              />
-              <input type="submit" value="Submit" />
-            </InsertForm>
-          </InsertFormPositioner>
-        )}
-        <Button onClick={onToggle} open={open}>
-          <MdAdd /> 글쓰기
-        </Button>
+        <InsertFormPositioner>
+          <InsertForm onSubmit={onSubmit}>
+            <Input
+              autoFocus
+              onChange={onChange}
+              value={value}
+              placeholder="글을 입력한 후, 작성하기를 누르세요"
+            />
+            <Input2 type="submit" value="작성하기" />
+          </InsertForm>
+        </InsertFormPositioner>
       </Container>
     </MainContainer>
   );
