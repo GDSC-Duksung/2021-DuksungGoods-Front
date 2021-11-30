@@ -1,12 +1,14 @@
 import React from "react";
 
-const ActualPage = () => {
+const ActualListPage = () => {
   return (
     <div>
       <text>실수요조사 페이지입니다.</text>
       <br />
-      <a href="/realposting">실수요조사폼 바로가기</a>
+      <a href="/ActualPostingPage">실수요조사 포스팅 바로가기</a>
+      <br />
+      <a href="/ActualDetailPage">실수요조사 디테일 바로가기</a>
     </div>
   );
 };
-export default ActualPage;
+export default ActualListPage;
