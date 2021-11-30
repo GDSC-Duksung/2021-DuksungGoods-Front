@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/mainPage";
 import ActDetailPage from "./pages/actDetailPage";
+import FictiDetailPage from "./pages/fictiDetailPage";
 import NavBar from "./components/Navbar";
 import Top from "./components/top";
 import MyPage from "./pages/MyPage";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
           <Route path="/actdetail" component={ActDetailPage} />
+          <Route path="/fictidetail" component={FictiDetailPage} />
           <Route
             render={({ location }) => (
               <div>
