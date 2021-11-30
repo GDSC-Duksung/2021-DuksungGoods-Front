@@ -4,6 +4,21 @@ import Community from "../pages/community";
 const Container=styled.div`
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1000px){
+        #form{
+            display: none;
+        }
+        #introdetail{
+            display:none;
+        }
+        #goodsinfo{
+            width:100%;
+        }
+        #goodsimg{
+            display: 100%;
+        }
+    }
 `;
 const Intro = styled.div`
   display: flex;
@@ -70,7 +85,21 @@ const Wrapper=styled.div`
 `;
 const UserInfo=styled.input`
     margin-right: 30px;
+    padding-left: 1px;
     line-height: ${props => props.height}px;
+`;
+const Input = styled.textarea`
+  width: 57%;
+  height: 40px;
+  margin: 0 30px 0 0;
+  font-size: 18px;
+  resize: none;
+`;
+const GoodsInfo=styled.div`
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid #CBCBCB;
+    height: 1000px;
 `;
 const GoodsDetail=()=>{
     const price=12000;
@@ -83,10 +112,10 @@ const GoodsDetail=()=>{
 
     return(
         <Container style={{flexDirection:"row"}}>
-            <div style={{width: "70%",borderRadius:"5px", border:"1px solid #CBCBCB", height:"1000px"}}>
+            <GoodsInfo id="goodsinfo" >
                 <text>안녕하세요. 창작자 bogyung.입니다. 이번에 공구할 굿즈는...</text>
-            </div>
-            <div  style={{width: "30%", padding:"1em"}}>
+            </GoodsInfo>
+            <div id="form" style={{width: "30%", padding:"1em"}}>
                 <div style={{display:"inline-block" ,width: "100%",border:"1px solid #C4C4C4", height:"40px", paddingTop:"20px"}}>
                     <ActText height={20} size={15} weight={100} style={{ margin:"0 100px 0 20px"}}>창작자 소개</ActText>
                     <ActText height={20} size={15} weight={100}>bogyung1</ActText>
@@ -97,7 +126,7 @@ const GoodsDetail=()=>{
                         <UserInfo></UserInfo>          
                     </Wrapper>
                     <Wrapper>
-                        <ActText  height={20} size={15} weight={100}>후대폰 번호</ActText>
+                        <ActText  height={20} size={15} weight={100}>휴대폰 번호</ActText>
                         <UserInfo></UserInfo>          
                     </Wrapper>
                     <Wrapper>
@@ -106,19 +135,19 @@ const GoodsDetail=()=>{
                     </Wrapper>
                     <Wrapper>
                         <ActText  height={20} size={15} weight={100}>주소</ActText>
-                        <UserInfo height={40}></UserInfo>          
+                        <Input></Input>         
                     </Wrapper>
                     <Wrapper>
                         <ActText  height={20} size={15} weight={100}>우편번호</ActText>
                         <UserInfo></UserInfo>          
                     </Wrapper>
                     <Wrapper>
-                        <ActText  height={20} size={15} weight={100}>배송시 요청사항</ActText>
-                        <UserInfo height={40}></UserInfo>          
+                        <ActText  height={20} size={15} weight={100}>배송시<br /> 요청사항</ActText>
+                        <Input></Input>          
                     </Wrapper>
                     <Wrapper>
-                        <ActText  height={20} size={15} weight={100}>환불 받을 계좌 번호</ActText>
-                        <UserInfo></UserInfo>          
+                        <ActText  height={20} size={15} weight={100}>환불 받을<br/> 계좌 번호</ActText>
+                        <Input></Input>          
                     </Wrapper>
                     <ChoiceDiv style={{justifyContent:"flex-end", marginRight:"30px"}}>
                         <NumButton onClick={()=>{setNum(num-1)}}>-</NumButton>
@@ -168,8 +197,8 @@ const ActDetailPage = () => {
             <ActText height={200} size={35} weight={600}>이번 겨울은 뭐다? 덕담 공구(덕성 담요)
             <span role="img" aria-label="writing hand">🔥</span></ActText>
             <Intro>
-                <img height="400px"  src="https://t1.daumcdn.net/cfile/tistory/99737A495BBD582C29"/>
-                <IntroDetail>
+                <img id="goodsimg" height="400px"  src="https://t1.daumcdn.net/cfile/tistory/99737A495BBD582C29"/>
+                <IntroDetail id="introdetail">
                     <ActText height={20} size={17} weight={100}>모인 개수</ActText>
                     <ActText size={35} weight={600}>99개</ActText>
                     <ActText height={20} size={17} weight={100}>남은 시간</ActText>
