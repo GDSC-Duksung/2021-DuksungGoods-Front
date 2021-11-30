@@ -48,7 +48,7 @@ const DIV = styled.div`
   padding: 10px;
 `;
 
-function PrepostingForm(props) {
+function ActualPostingPage(props) {
   const [preposting, setPreposting] = useState({
     category: "",
     title: "",
@@ -156,4 +156,4 @@ function PrepostingForm(props) {
   );
 }
 
-export default PrepostingForm;
+export default ActualPostingPage;
