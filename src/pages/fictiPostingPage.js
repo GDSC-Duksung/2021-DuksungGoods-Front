@@ -1,7 +1,7 @@
 import React from "react";
 import PrepostingForm from "../components/PrepostingForm";
 
-function Preposting() {
+function FictiPostingPage() {
   const handleCreate = (data) => {
     console.log(data);
   };
@@ -11,4 +11,4 @@ function Preposting() {
     </div>
   );
 }
-export default Preposting;
+export default FictiPostingPage;

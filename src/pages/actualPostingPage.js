@@ -37,7 +37,6 @@ const Button = styled.button`
   font-size: 20x;
   border-radius: 15px;
 `;
-
 const Hr = styled.hr`
   background-color: #981b45;
   height: 5px;
@@ -47,8 +46,7 @@ const Hr = styled.hr`
 const DIV = styled.div`
   padding: 10px;
 `;
-
-function PrepostingForm(props) {
+function ActualPostingPage(props) {
   const [preposting, setPreposting] = useState({
     category: "",
     title: "",
@@ -156,4 +154,4 @@ function PrepostingForm(props) {
   );
 }
 
-export default PrepostingForm;
+export default ActualPostingPage;

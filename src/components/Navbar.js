@@ -26,10 +26,10 @@ const Navbar = () => {
       <Nav>
         <Menu>
           <Items onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <NavLink to="/ficti">가수요조사</NavLink>
+            <NavLink to="/fictilistpage">가수요조사</NavLink>
           </Items>
           <Items>
-            <NavLink to="/actual">실수요조사</NavLink>
+            <NavLink to="/actuallistpage">실수요조사</NavLink>
           </Items>
           <Items>
             <NavLink to="/notepage">쪽지보내기</NavLink>

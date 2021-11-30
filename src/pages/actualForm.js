@@ -9,24 +9,20 @@ const MainContainer = styled.div`
 const Container = styled.div`
   width: 70%;
 `;
-
 const Title = styled.div`
   font-size: 15px;
   padding-top: 10px;
 `;
-
 const Content = styled.div`
   margin: 5px;
   padding: 5px;
 `;
-
 const Input = styled.input`
   width: 100%;
   padding: 10px;
   border-radius: 3px;
   font-size: 15px;
 `;
-
 const Button = styled.button`
   width: 100%;
   padding: 10px;
@@ -36,14 +32,12 @@ const Button = styled.button`
   font-size: 20x;
   color: white;
 `;
-
 const Hr = styled.hr`
   background-color: #981b45;
   height: 5px;
   border-radius: 100px;
   border: none;
 `;
-
 const Row = styled.div`
   display: inline-flex;
   flex-direction: row;

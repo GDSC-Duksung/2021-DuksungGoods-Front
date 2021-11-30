@@ -1,20 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/mainPage";
-import ActDetailPage from "./pages/actDetailPage";
 import FictiDetailPage from "./pages/fictiDetailPage";
+import ActualDetailPage from "./pages/actualDetailPage";
+import ActualListPage from "./pages/actualListPage";
+import ActualPostingPage from "./pages/actualPostingPage";
+import ActualForm from "./pages/actualForm";
+import FictiListPage from "./pages/fictiListPage";
+import FictiPostingPage from "./pages/fictiPostingPage";
+import FictiForm from "./pages/fictiForm";
 import NavBar from "./components/Navbar";
 import Top from "./components/top";
 import MyPage from "./pages/MyPage";
 import NotePage from "./pages/notePage";
 import WatchListPage from "./pages/watchlistPage";
 import WholePage from "./pages/wholePage";
-import FictiPage from "./pages/fictiPage";
-import ActualPage from "./pages/actualPage";
-import Preposting from "./pages/preposting";
-import Realposting from "./pages/realposting";
-import Preform from "./pages/preform";
-import Realform from "./pages/realform";
 import Community from "./pages/community";
 import Update from "./pages/update";
 import MyinfoPage from "./pages/myinfoPage";
@@ -35,20 +35,20 @@ function App() {
           <Route path="/loginpage" component={LoginPage} />
           <Route path="/my" component={MyPage} />
           <Route path="/whole" component={WholePage} />
-          <Route path="/ficti" component={FictiPage} />
-          <Route path="/actual" component={ActualPage} />
-          <Route path="/preposting" component={Preposting} />
-          <Route path="/realposting" component={Realposting} />
-          <Route path="/preform" component={Preform} />
-          <Route path="/realform" component={Realform} />
+          <Route path="/actualForm" component={ActualForm} />
+          <Route path="/actualdetailpage" component={ActualDetailPage} />
+          <Route path="/actualpostingpage" component={ActualPostingPage} />
+          <Route path="/actuallistpage" component={ActualListPage} />
+          <Route path="/fictilistpage" component={FictiListPage} />
+          <Route path="/fictipostingpage" component={FictiPostingPage} />
+          <Route path="/fictiForm" component={FictiForm} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/notepage" component={NotePage} />
           <Route path="/findpass" component={FindPassPage} />
           <Route path="/myinfo" component={MyinfoPage} />
           <Route path="/community" component={Community} />
           <Route path="/update" component={Update} />
-          <Route path="/actdetail" component={ActDetailPage} />
-          <Route path="/fictidetail" component={FictiDetailPage} />
+          <Route path="/fictidetailpage" component={FictiDetailPage} />
           <Route
             render={({ location }) => (
               <div>
